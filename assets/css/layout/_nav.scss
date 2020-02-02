@@ -1,0 +1,49 @@
+/* nav */
+.navbar .navbar-brand img {
+  height: 20px;
+}
+nav {
+  background-color: $green;
+  color : white ;
+}
+.card {
+  background-color: $green;
+  color : white ;
+}
+.navbar .navbar-brand {
+  padding-top: 0;
+}
+
+.navbar .nav-link {
+  color: #f0f0f0!important;
+}
+
+.navbar .button-collapse {
+  padding-top: 1px;
+}
+
+.card-intro .card-body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 0 !important;
+}
+
+.card-intro .card-body h1 {
+  margin-bottom: 0;
+}
+
+.card-intro {
+  margin-top: 53px;
+}
+
+@media (max-width: 450px) {
+  .card-intro {
+    margin-top: 56px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .card-intro {
+    padding-left: 0 !important;
+  }
+}

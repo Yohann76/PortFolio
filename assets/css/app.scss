@@ -1,0 +1,22 @@
+@import 'helper/variables';
+
+@import '~bootstrap';
+@import '~font-awesome';
+
+@import './layout/nav';
+@import './layout/footer';
+
+@import './components/phone';
+@import './components/show_phone';
+
+/* CSS general */
+body {
+    background-color: white;
+}
+
+.btn {
+    background-color: $blue ;
+    color : white ;
+    margin-right: 35px ;
+}
+

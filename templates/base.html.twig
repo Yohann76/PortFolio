@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Yohann durand">
+        <meta name="author" content="Yohann durand">
+
+        <title>{% block title %}Yohann Durand{% endblock %}</title>
+
+        {% block stylesheets %}
+            <!-- File build -->
+            {{ encore_entry_link_tags('app') }}
+
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+              integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+              crossorigin="anonymous">
+              
+        {% endblock %}
+    </head>
+
+    <body>
+        <nav>
+        
+        </nav>
+
+        {% block body %}
+
+        {% endblock %}
+
+        <footer>
+        
+        </footer>
+            
+        {% block javascripts %}
+            <!-- File build -->
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>
