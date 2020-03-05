@@ -24,8 +24,6 @@ Encore
      * and one CSS file (e.g. app.scss) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
-    //.addEntry('index', './assets/js/index.js')
-    //.addEntry('page2', './assets/js/page2.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -64,11 +62,24 @@ Encore
 
     // CopyFile
     .copyFiles({
-         from : './assets/images',
-         to: 'images/[path][name].[hash:8].[ext]'
+         from : './assets/img',
+         to: 'img/[path][name].[hash:8].[ext]'
+    })
+
+    // for img  in lightbox
+    .copyFiles({
+        from : './assets/lib/lightbox/images',
+        to: 'img/[path][name].[hash:8].[ext]'
+    })
+
+    // for fonts in lib
+    .copyFiles({
+        from : './assets/lib/font-awesome/fonts',
+        to: 'build/fonts/[path][name].[hash:8].[ext]'
     })
     // for react and JSX
-    .enableReactPreset()
+    //.enableReactPreset()
+
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
 
@@ -77,7 +88,7 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    // .autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
