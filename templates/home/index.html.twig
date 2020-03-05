@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Yohann Durand - Home {% endblock %}
+
+{% block body %}
+  <main id="main">
+    <!-- Carousel -->
+    {{ include('home/_carousel.html.twig') }}
+
+    <!-- Formation -->
+    {{ include('home/_formation.html.twig') }}
+
+    <!-- Service -->
+    {{ include('home/_service.html.twig') }}
+
+    <!-- Facts -->
+    {{ include('home/_facts.html.twig') }}
+
+    <!-- Portfolio -->
+    {{ include('home/_portfolio.html.twig') }}
+
+    <!-- Clients Section -->
+    {{ include('home/_clients.html.twig') }}
+
+    <!-- Contacts -->
+    {{ include('home/_contact.html.twig') }}
+  </main>
+{% endblock %}
