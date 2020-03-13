@@ -69,7 +69,7 @@ jobs:
       - run: bin/phpunit
 
   configure_and_deploy:
-  
+    steps:
       # Configure and deploy server
       - run: echo $ANSIBLE_VAULT_PASS > ansible/.vault-pass.txt
       - run: ansible-playbook ansible/playbook.yaml -i ansible/hosts.ini -e "git_branch=${CIRCLE_BRANCH}" --vault-password-file=ansible/.vault-pass.txt
