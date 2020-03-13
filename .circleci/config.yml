@@ -64,33 +64,12 @@ jobs:
       #- run: ./bin/console doctrine:schema:create --env=test
       #- run: ./bin/console doctrine:fixtures:load --env=test --no-interaction
 
-
       # Launch tests
       - run: chmod +x bin/phpunit
       - run: bin/phpunit
 
   configure_and_deploy:
-    docker:
-      - image: ubuntu:16.04
-        environment:
-          ANSIBLE_HOST_KEY_CHECKING: no
     steps:
-      # Install PIP
-      - run:
-          name: Install System packages
-          command: apt update && apt -y install python3-pip ssh
-      # Installation
-      - run:
-          name: Install Ansible
-          command: pip3 install ansible
-      # Dependencies
-      - checkout
-      - restore_cache:
-          key: portfolio-${CIRCLE_BRANCH}-{{ checksum "./ansible/requirements.yaml" }}-v1
-      - run: ansible-galaxy install -r ansible/requirements.yaml
-      - save_cache:
-          key: portfolio-${CIRCLE_BRANCH}-{{ checksum "./ansible/requirements.yaml" }}-v1
-
       # Configure and deploy server
       - run: echo $ANSIBLE_VAULT_PASS > ansible/.vault-pass.txt
       - run: ansible-playbook ansible/playbook.yaml -i ansible/hosts.ini -e "git_branch=${CIRCLE_BRANCH}" --vault-password-file=ansible/.vault-pass.txt
