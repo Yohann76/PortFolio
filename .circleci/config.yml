@@ -65,7 +65,7 @@ jobs:
       #- run: ./bin/console doctrine:fixtures:load --env=test --no-interaction
 
       # Launch tests
-      - run: chmod +x vendor/bin/phpunit
+      ##- run: chmod +x vendor/bin/phpunit
       #- run: sudo chmod -R 777 /vendor
       - run: bin/phpunit
 
