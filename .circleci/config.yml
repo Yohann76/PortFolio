@@ -64,9 +64,9 @@ jobs:
       #- run: ./bin/console doctrine:schema:create --env=test
       #- run: ./bin/console doctrine:fixtures:load --env=test --no-interaction
 
+
       # Launch tests
-      ##- run: chmod +x vendor/bin/phpunit
-      #- run: sudo chmod -R 777 /vendor
+      - run: chmod +x bin/phpunit
       - run: bin/phpunit
 
   configure_and_deploy:
@@ -90,6 +90,7 @@ jobs:
       - run: ansible-galaxy install -r ansible/requirements.yaml
       - save_cache:
           key: portfolio-${CIRCLE_BRANCH}-{{ checksum "./ansible/requirements.yaml" }}-v1
+
       # Configure and deploy server
       - run: echo $ANSIBLE_VAULT_PASS > ansible/.vault-pass.txt
       - run: ansible-playbook ansible/playbook.yaml -i ansible/hosts.ini -e "git_branch=${CIRCLE_BRANCH}" --vault-password-file=ansible/.vault-pass.txt
