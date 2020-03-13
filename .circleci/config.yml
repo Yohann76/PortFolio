@@ -19,13 +19,13 @@ jobs:
       - run:
           name: Install PHP Extensions
           command: sudo docker-php-ext-install pdo pdo_mysql xsl zip
-      - run:
-          name: Configure gd
+      #- run:
+          #name: Configure gd
           #command: sudo docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr
-          command: sudo docker-php-ext-configure gd --with-freetype --with-jpeg
-      - run:
-          name: Install PHP gd
-          command: sudo -E docker-php-ext-install -j$(nproc) gd
+          ##command: sudo docker-php-ext-configure gd --with-freetype --with-jpeg
+      #- run:
+          #name: Install PHP gd
+          #command: sudo -E docker-php-ext-install -j$(nproc) gd
 
       # Download and cache dependencies
       - restore_cache:
