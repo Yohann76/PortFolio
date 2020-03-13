@@ -23,9 +23,12 @@ yarn-error.log
 ###< symfony/phpunit-bridge ###
 
 ###> symfony/framework-bundle ###
+
+###> other ###
 .idea/
 /.php-version
 /public/data
+###> other ###
 
 ### Ansible ###
 /ansible/hosts.ini
