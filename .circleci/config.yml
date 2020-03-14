@@ -83,8 +83,8 @@ jobs:
       - run:
           name: Install Ansible
           #command: pip3 install ansible
-          command: sudo apt install ansible
-          
+          command: apt install ansible
+
       # Dependencies
       - checkout
 
