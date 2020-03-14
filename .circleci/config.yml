@@ -83,7 +83,7 @@ jobs:
       - run:
           name: Install Ansible
           #command: pip3 install ansible
-          command: apt install ansible
+          command: apt-get install ansible
 
       # Dependencies
       - checkout
@@ -98,7 +98,7 @@ jobs:
 
       # Configure and deploy server
       - run: echo $ANSIBLE_VAULT_PASS > ansible/.vault-pass.txt
-      - run: ansible-playbook ansible/playbook.yaml -i ansible/hosts.ini -e "git_branch=${CIRCLE_BRANCH}" --vault-password-file=ansible/.vault-pass.txt
+      - run: ansible-playbook ansible/playbook.yml -i ansible/hosts.ini -e "git_branch=${CIRCLE_BRANCH}" --vault-password-file=ansible/.vault-pass.txt
       - run: rm ansible/.vault-pass.txt
 
 workflows:
