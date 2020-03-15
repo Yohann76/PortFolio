@@ -23,6 +23,7 @@ jobs:
           #name: Configure gd
           #command: sudo docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr
           ##command: sudo docker-php-ext-configure gd --with-freetype --with-jpeg
+
       #- run:
           #name: Install PHP gd
           #command: sudo -E docker-php-ext-install -j$(nproc) gd
@@ -82,8 +83,8 @@ jobs:
       # Installation
       - run:
           name: Install Ansible
-          #command: pip3 install ansible
-          command: apt-get install ansible
+          command: pip3 install ansible
+
 
       # Dependencies
       - checkout
