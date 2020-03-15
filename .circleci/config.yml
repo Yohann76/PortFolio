@@ -83,7 +83,7 @@ jobs:
       # Installation
       - run:
           name: Install Ansible
-          command: pip3 install ansible
+          command: pip install --upgrade pip && pip install ansible
 
 
       # Dependencies
