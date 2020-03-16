@@ -95,6 +95,10 @@ jobs:
             pip install --upgrade pip && pip install --upgrade setuptools
             pip install ansible
 
+      - run:
+          name: Install sshpass
+          command: apt-get install sshpass
+
       # Dependencies
       - checkout
 
