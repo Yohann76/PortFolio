@@ -110,7 +110,7 @@ jobs:
         #- save_cache:
           #key: portfolio-${CIRCLE_BRANCH}-{{ checksum "./ansible/requirements.yaml" }}-v1
 
-      - run: echo $ANSIBLE_VAULT_PASSWORD > ansible/.vault-pass.txt #$ANSIBLE_VAULT_PASS
+      - run: echo $ANSIBLE_VAULT_PASSWORD > ansible/.vault-pass.txt #$ANSIBLE_VAULT_PASSWORD defined in CircleCi
       - run: ansible-playbook ansible/playbook.yml -i ansible/hosts.ini -e "git_branch=master" --vault-password-file=ansible/.vault-pass.txt
       - run: rm ansible/.vault-pass.txt
 
