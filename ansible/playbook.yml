@@ -57,25 +57,13 @@
         path: "{{ symfony_console_path }}"
         mode: 0777
 
-    # Todo : replace just line
-    - name : Delete .env ( export github )
-      become: true
-      command: rm -rf /var/www/html/PortFolio/.env
-
-    - name: Add .env ( import ansible/templates )
-      become: true
-      template:
-        src: templates/.env
-        dest: "/var/www/html/PortFolio"
-
-      #- name: Add SQL connexion information in .env file ( with a new admin SQL User )
-      #become: true
-        #lineinfile:
-        #dest: "{{ symfony_root_dir }}/.env"
-        #regexp: ''
-        #insertafter: ''
-        #line: "{{ database_url }}"
-        #line: DATABASE_URL=mysql://{{ sql_user }}:{{ sql_pass }}@localhost:3306/portfolio #Prod
+      - name: Add SQL connexion information in .env file ( with a new admin SQL User )
+        become: true
+        lineinfile:
+        dest: "{{ symfony_root_dir }}/.env"
+        regexp: ''
+        insertafter: ''
+        line: DATABASE_URL=mysql://{{ sql_user }}:{{ sql_pass }}@localhost:3306/portfolio #Prod
 
     - name: apt-get install composer
       become: true
