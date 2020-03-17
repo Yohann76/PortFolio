@@ -189,7 +189,7 @@
         chdir: '{{ symfony_root_dir }}'
 
     - name: Clear cache
-      command: '{{ symfony_console_path }} cache:clear --env={{ symfony_env }}'
+      command: '{{ symfony_console_path }} cache:clear --env=prod'
 
   roles:
     - php
