@@ -57,13 +57,22 @@
         path: "{{ symfony_console_path }}"
         mode: 0777
 
-      - name: Add SQL connexion information in .env file ( with a new admin SQL User )
-        become: true
+    ###### .env ######
+    - name: Add SQL connexion information in .env file ( with a new admin SQL User )
+      become: true
         lineinfile:
-        dest: "{{ symfony_root_dir }}/.env"
-        regexp: ''
-        insertafter: ''
-        line: DATABASE_URL=mysql://{{ sql_user }}:{{ sql_pass }}@localhost:3306/portfolio #Prod
+          dest: "{{ symfony_root_dir }}/.env"
+          regexp: ''
+          insertafter: ''
+          line: DATABASE_URL=mysql://{{ sql_user }}:{{ sql_pass }}@localhost:3306/portfolio
+
+    - name: Add mail connexion information in .env file
+      become: true
+        lineinfile:
+          dest: "{{ symfony_root_dir }}/.env"
+          regexp: ''
+          insertafter: ''
+          line: MAILER_URL=gmail://{{ mail }}:{{ mail_password }}@localhost?encryption=tls&auth_mode=oauth
 
     - name: apt-get install composer
       become: true
