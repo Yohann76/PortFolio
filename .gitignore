@@ -31,7 +31,6 @@ yarn-error.log
 ###> other ###
 
 ### Ansible ###
-/ansible/hosts.ini
 /ansible/templates/.env
 /node_modules
 ###< symfony/framework-bundle ###
