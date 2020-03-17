@@ -92,13 +92,13 @@
         path: /usr/local/bin/composer
       register: composer_stat
 
-    - name: Make sure composer is at its latest version
-      composer:
-        working_dir: "{{ symfony_root_dir }}"
-        command: self-update
-      register: composer_self_update
-      changed_when: "not composer_self_update.stdout|search('You are already using composer version')"
-      when: composer_stat.stat.exists
+    #- name: Make sure composer is at its latest version
+      #composer:
+        #working_dir: "{{ symfony_root_dir }}"
+        #command: self-update
+      #register: composer_self_update
+      #changed_when: "not composer_self_update.stdout|search('You are already using composer version')"
+      #when: composer_stat.stat.exists
 
     - name: Download composer
       get_url:
