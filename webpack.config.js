@@ -77,6 +77,12 @@ Encore
         from : './assets/lib/font-awesome/fonts',
         to: 'build/fonts/[path][name].[hash:8].[ext]'
     })
+
+    // for fonts in lib
+    .copyFiles({
+        from : './assets/lib/font-awesome/css',
+        to: 'build/fontscss/[path][name].[hash:8].[ext]'
+    })
     // for react and JSX
     //.enableReactPreset()
 
