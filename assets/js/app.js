@@ -15,6 +15,7 @@ import '../css/app.scss';
 // import lib
 
 // import '../lib/jquery/jquery.min';
+
 import '../lib/jquery/jquery-migrate.min';
 import '../lib/bootstrap/js/bootstrap.bundle.min';
 import '../lib/easing/easing.min';
