@@ -3,10 +3,13 @@
 @import '~bootstrap';
 @import '~font-awesome';
 
+
 @import './layout/nav';
 @import './layout/footer';
 
 @import './layout/carousel';
+@import '~owl.carousel';
+
 @import './layout/contact';
 @import './layout/formation';
 @import './layout/facts';
@@ -15,9 +18,10 @@
 @import './layout/clients';
 
 
-@import '../lib/animate/animate.min.css';
-@import '../lib/owlcarousel/assets/owl.carousel.min.css';
-@import '../lib/lightbox/css/lightbox.min.css';
+
+
+//@import '../lib/animate/animate.min.css';
+//@import '../lib/lightbox/css/lightbox.min.css';
 
 
 
