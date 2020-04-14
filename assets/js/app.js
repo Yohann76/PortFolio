@@ -24,7 +24,7 @@ import '../lib/superfish/superfish.min';
 import '../lib/wow/wow.min';
 import '../lib/waypoints/waypoints.min';
 import '../lib/counterup/counterup.min';
-import '../lib/owlcarousel/assets/owl.carousel.min.css';
+//import '../lib/owlcarousel/assets/owl.carousel.min.css';
 import '../lib/isotope/isotope.pkgd.min';
 // import '../lib/lightbox/js/lightbox.min';
 import '../lib/touchSwipe/jquery.touchSwipe.min';
