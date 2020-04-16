@@ -1000,6 +1000,18 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+animate.css@latest:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.2.tgz#e73e0d50e92cb1cfef1597d9b38a9481020e08ea"
+  integrity sha512-0bE8zYo7C0KvgOYrSVfrzkbYk6IOTVPNqkiHg2cbyF4Pq/PXzilz4BRWA3hwEUBoMp5VBgrC29lQIZyhRWdBTw==
+
+animate.js@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/animate.js/-/animate.js-2.0.2.tgz#3037897bf797cdad95be8e064ac61fc85914d3db"
+  integrity sha512-syZXdUvQoqLtIW5kA4hjyXM7FCDLGVZh+RgAx8PasPnEsCFhmUc6zn62h78MfNOoMnJ9ZjhKEkPoI5isZDQ+yQ==
+  dependencies:
+    lodash-es "^4.17.14"
+
 animate@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/animate/-/animate-1.0.0.tgz#461f87afea4bc85db9eecfdebaee44d5b78a186c"
@@ -4127,7 +4139,7 @@ isstream@~0.1.2:
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
 
-jquery@>=1.8.3:
+jquery@>=1.8, jquery@>=1.8.3:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.0.tgz#9980b97d9e4194611c36530e7dc46a58d7340fc9"
   integrity sha512-Xb7SVYMvygPxbFMpTFQiHh1J7HClEaThguL15N/Gg37Lri/qKyhRGZYzHRyLH8Stq3Aow0LsHO2O2ci86fCrNQ==
@@ -4310,6 +4322,11 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+lightbox@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/lightbox/-/lightbox-0.5.0.tgz#cccd5ffab547cff8efd241f2dd9cc4acdf180b93"
+  integrity sha1-zM1f+rVHz/jv0kHy3ZzErN8YC5M=
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -4342,6 +4359,11 @@ locate-path@^3.0.0:
   dependencies:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
+
+lodash-es@^4.17.14:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
+  integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -6909,6 +6931,13 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
+superfish@^1.7.10:
+  version "1.7.10"
+  resolved "https://registry.yarnpkg.com/superfish/-/superfish-1.7.10.tgz#94400c5683b0cc87215c6247f26c27890990bc9e"
+  integrity sha512-4O2ySFEtu9AEmYy4gkRl2ifHPwzR1RSQBTpFedpR2nv8qxhx3lEdotHvxKGApHdjmffJuB/Oj5wflHJh1bnMIw==
+  dependencies:
+    jquery ">=1.8"
+
 supports-color@6.1.0, supports-color@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-6.1.0.tgz#0764abc69c63d5ac842dd4867e8d025e880df8f3"
@@ -7554,6 +7583,13 @@ worker-farm@^1.7.0:
   integrity sha512-rvw3QTZc8lAxyVrqcSGVm5yP/IJ2UcB3U0graE3LCFoZ0Yn2x4EoVSqJKdB/T5M+FLcRPjz4TDacRf3OCfNUzw==
   dependencies:
     errno "~0.1.7"
+
+wowjs@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/wowjs/-/wowjs-1.1.3.tgz#440fc1bb4c7e896840ee47972296a2b59075acbd"
+  integrity sha1-RA/Bu0x+iWhA7keXIpaitZB1rL0=
+  dependencies:
+    animate.css latest
 
 wrap-ansi@^2.0.0:
   version "2.1.0"
