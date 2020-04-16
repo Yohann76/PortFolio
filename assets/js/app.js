@@ -4,18 +4,20 @@
 import '../css/app.scss';
 
 // Jquery environment
-//import $ from 'jquery';
-//import 'bootstrap'; // adds functionss to Jquery
-// phone.js
-// import React from 'react';
-// import { render } from 'react-dom';
-// import first element
+import $ from 'jquery';
+import 'bootstrap'; // adds functions to jQuery
 
+// Todo : définir wow
+import 'animate';
+import 'superfish';
+//import 'wowjs';
 
-// import lib
+//import '../lib/wow/wow.min';
+//import 'wowjs';
+//import wowjs from '../lib/wow/wow.min'
 
-// import '../lib/jquery/jquery.min';
-
+/*
+//import '../lib/jquery/jquery.min';
 import '../lib/jquery/jquery-migrate.min';
 import '../lib/bootstrap/js/bootstrap.bundle.min';
 import '../lib/easing/easing.min';
@@ -28,8 +30,7 @@ import '../lib/counterup/counterup.min';
 import '../lib/isotope/isotope.pkgd.min';
 // import '../lib/lightbox/js/lightbox.min';
 import '../lib/touchSwipe/jquery.touchSwipe.min';
-
-
+*/
 
 (function ($) {
     "use strict";
@@ -57,15 +58,18 @@ import '../lib/touchSwipe/jquery.touchSwipe.min';
     });
   
     // Initiate the wowjs animation library
-    new WOW().init();
+    //new WOW().init();
   
     // Initiate superfish on nav menu
+    /*
     $('.nav-menu').superfish({
       animation: {
         opacity: 'show'
       },
       speed: 400
     });
+    */
+
   
     // Mobile Navigation
     if ($('#nav-menu-container').length) {
@@ -184,7 +188,8 @@ import '../lib/touchSwipe/jquery.touchSwipe.min';
       $(this).css("background-image", "url('" + $(this).children('.carousel-background').children('img').attr('src') +"')");
       $(this).children('.carousel-background').remove();
     });
-  
+
+    /*
     $(".carousel").swipe({
       swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
         if (direction == 'left') $(this).carousel('next');
@@ -192,25 +197,35 @@ import '../lib/touchSwipe/jquery.touchSwipe.min';
       },
       allowPageScroll:"vertical"
     });
+    */
+
   
     // Skills section
+    /*
     $('#skills').waypoint(function() {
       $('.progress .progress-bar').each(function() {
         $(this).css("width", $(this).attr("aria-valuenow") + '%');
       });
     }, { offset: '80%'} );
-  
+    */
+
+    /*
     // jQuery counterUp (used in Facts section)
     $('[data-toggle="counter-up"]').counterUp({
       delay: 10,
       time: 1000
     });
+
+     */
   
     // Porfolio isotope and filter
+    /*
     var portfolioIsotope = $('.portfolio-container').isotope({
       itemSelector: '.portfolio-item',
       layoutMode: 'fitRows'
     });
+    */
+
   
     $('#portfolio-flters li').on( 'click', function() {
       $("#portfolio-flters li").removeClass('filter-active');
@@ -220,6 +235,7 @@ import '../lib/touchSwipe/jquery.touchSwipe.min';
     });
   
     // Clients carousel (uses the Owl Carousel library)
+    /*
     $(".clients-carousel").owlCarousel({
       autoplay: true,
       dots: true,
@@ -227,6 +243,8 @@ import '../lib/touchSwipe/jquery.touchSwipe.min';
       responsive: { 0: { items: 2 }, 768: { items: 4 }, 900: { items: 6 }
       }
     });
+
+
   
     // Testimonials carousel (uses the Owl Carousel library)
     $(".testimonials-carousel").owlCarousel({
@@ -235,6 +253,8 @@ import '../lib/touchSwipe/jquery.touchSwipe.min';
       loop: true,
       items: 1
     });
+    */
+     
   
   })(jQuery);
   
