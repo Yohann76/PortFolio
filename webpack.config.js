@@ -66,12 +66,6 @@ Encore
          to: 'img/[path][name].[hash:8].[ext]'
     })
 
-    // for img  in lightbox
-    .copyFiles({
-        from : './assets/lib/lightbox/images',
-        to: 'img/[path][name].[hash:8].[ext]'
-    })
-
     // for fonts in lib
     .copyFiles({
         from : './assets/lib/font-awesome/fonts',
