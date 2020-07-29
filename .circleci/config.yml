@@ -47,16 +47,17 @@ jobs:
       # run: bin/console cache:clear --env=test
       #- run: bin/console cache:warmup --env=test
 
-      - restore_cache:
-          keys:
-            - portfolio-node-v1-{{ checksum "package.json" }}
-            - portfolio-node-v1-
+      # for yarn
+      #- restore_cache:
+          #keys:
+            #- portfolio-node-v1-{{ checksum "package.json" }}
+            #- portfolio-node-v1-
 
-      - run: yarn install
-      - save_cache:
-          key: portfolio-node-v1-{{ checksum "package.json" }}
-          paths:
-            - node_modules
+      #- run: yarn install
+      #- save_cache:
+          #key: portfolio-node-v1-{{ checksum "package.json" }}
+          #paths:
+            #- node_modules
 
       #- run: yarn build
 
