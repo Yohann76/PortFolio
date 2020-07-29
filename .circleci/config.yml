@@ -58,7 +58,7 @@ jobs:
           paths:
             - node_modules
 
-      - run: yarn build
+      #- run: yarn build
 
       # Database
       #- run: ./bin/console doctrine:database:create --env=test
