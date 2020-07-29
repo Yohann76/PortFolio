@@ -58,6 +58,29 @@
         mode: 0777
 
     ###### .env ######
+
+    ## new
+
+    #- name: Add SQL connexion information in .env file ( with a new admin SQL User )
+      #become: true
+        #lineinfile:
+        #dest: "{{ symfony_root_dir }}/.env"
+        # replace
+        #regexp: 'DATABASE_URL=mysql://root:root@127.0.0.1:3306/WebItemMarket'
+        # for
+        #line: DATABASE_URL=mysql://{{ sql_user }}:{{ sql_pass }}@localhost:3306/WebItemMarket
+
+      #- name: Add mail connexion information in .env file
+      #become: true
+        #lineinfile:
+        #dest: "{{ symfony_root_dir }}/.env"
+        # replace
+        #regexp: 'MAILER_URL=null://localhost'
+        # for
+        #line: MAILER_URL=gmail://{{ mail }}:{{ mail_password }}@localhost?encryption=tls&auth_mode=oauth
+
+    ## end new
+
     - name: Add SQL connexion information in .env file ( with a new admin SQL User )
       become: true
       lineinfile:
@@ -74,6 +97,7 @@
         insertafter: ''
         line: MAILER_URL=gmail://{{ mail }}:{{ mail_password }}@localhost?encryption=tls&auth_mode=oauth
 
+    ## end .env
     - name: apt-get install composer
       become: true
       apt:
