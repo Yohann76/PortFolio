@@ -125,11 +125,11 @@
         - mv composer.phar /usr/local/bin/composer
       notify: Restart Nginx
 
-    #- name: Set permissions on Composer
-      #become: true
-      #file:
-        #path: /usr/bin/composer
-        #mode: "a+x"
+    - name: Set permissions on Composer
+      become: true
+      file:
+        path: /usr/bin/composer
+        mode: "a+x"
 
     #- name: Clear cache
       #command: '{{ symfony_console_path }} cache:clear --env=prod'
