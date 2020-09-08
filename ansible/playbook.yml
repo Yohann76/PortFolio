@@ -83,7 +83,7 @@
         # replace
         regexp: 'GITHUB_TOKEN=key #Token API Github'
         # for
-        line: GITHUB_TOKEN=={{ github_token_api }}
+        line: GITHUB_TOKEN={{ github_token_api }}
 
     ## end .env
 
