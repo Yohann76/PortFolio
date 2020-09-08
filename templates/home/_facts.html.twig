@@ -12,19 +12,20 @@ Facts Section
 
         <div class="row counters">
 
-            <div class="col-lg-3 col-6 text-center">
-                <span data-toggle="counter-up">15</span>
-                <p>Repository</p>
-            </div>
 
             <div class="col-lg-3 col-6 text-center">
-                <span data-toggle="counter-up">566</span>
+                <span data-toggle="counter-up">1,{{ commitsYears }}</span>
                 <p>Contribution la derniére année</p>
             </div>
 
             <div class="col-lg-3 col-6 text-center">
-                <span data-toggle="counter-up">25</span>
-                <p>Projet Réalisé</p>
+                <span data-toggle="counter-up">{{ publicRepo }} </span>
+                <p>Projets Public</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">{{  privateRepo }}</span>
+                <p>Projets Privé </p>
             </div>
 
             <div class="col-lg-3 col-6 text-center">

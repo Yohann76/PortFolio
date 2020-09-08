@@ -58,46 +58,35 @@
         mode: 0777
 
     ###### .env ######
-
-    ## new
-
     #- name: Add SQL connexion information in .env file ( with a new admin SQL User )
       #become: true
-        #lineinfile:
+      #lineinfile:
         #dest: "{{ symfony_root_dir }}/.env"
         # replace
-        #regexp: 'DATABASE_URL=mysql://root:root@127.0.0.1:3306/WebItemMarket'
+        #regexp: 'DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/portfolio?serverVersion=5.7'
         # for
-        #line: DATABASE_URL=mysql://{{ sql_user }}:{{ sql_pass }}@localhost:3306/WebItemMarket
+        #line: DATABASE_URL=mysql://{{ sql_user }}:{{ sql_pass }}@localhost:3306/portfolio
 
-      #- name: Add mail connexion information in .env file
-      #become: true
-        #lineinfile:
-        #dest: "{{ symfony_root_dir }}/.env"
-        # replace
-        #regexp: 'MAILER_URL=null://localhost'
-        # for
-        #line: MAILER_URL=gmail://{{ mail }}:{{ mail_password }}@localhost?encryption=tls&auth_mode=oauth
-
-    ## end new
-
-    - name: Add SQL connexion information in .env file ( with a new admin SQL User )
+    - name: Add MAILER_URL in .env file
       become: true
       lineinfile:
         dest: "{{ symfony_root_dir }}/.env"
-        regexp: ''
-        insertafter: ''
-        line: DATABASE_URL=mysql://{{ sql_user }}:{{ sql_pass }}@localhost:3306/portfolio
+        # replace
+        regexp: 'MAILER_URL=key'
+        # for
+        line: MAILER_URL=passWordInVault
 
-    - name: Add mail connexion information in .env file
+    - name: Add GithubKey in .env file
       become: true
       lineinfile:
         dest: "{{ symfony_root_dir }}/.env"
-        regexp: ''
-        insertafter: ''
-        line: MAILER_URL=gmail://{{ mail }}:{{ mail_password }}@localhost?encryption=tls&auth_mode=oauth
+        # replace
+        regexp: 'GITHUB_TOKEN=key #Token API Github'
+        # for
+        line: GITHUB_TOKEN=={{ github_token_api }}
 
     ## end .env
+
     - name: apt-get install composer
       become: true
       apt:
