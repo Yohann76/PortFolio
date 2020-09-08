@@ -125,20 +125,20 @@
         - mv composer.phar /usr/local/bin/composer
       notify: Restart Nginx
 
-    - name: Set permissions on Composer
-      become: true
-      file:
-        path: /usr/bin/composer
-        mode: "a+x"
+    #- name: Set permissions on Composer
+      #become: true
+      #file:
+        #path: /usr/bin/composer
+        #mode: "a+x"
 
-    - name: Clear cache
-      command: '{{ symfony_console_path }} cache:clear --env=prod'
+    #- name: Clear cache
+      #command: '{{ symfony_console_path }} cache:clear --env=prod'
 
     - name: Install Composer's dependencies
       become: true
       composer:
         working_dir: "{{ symfony_root_dir }}"
-        no_dev: yes
+        no_dev: no
 
     # Symfony console commands
       #- name: Create DB if not exists
