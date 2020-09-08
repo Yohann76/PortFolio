@@ -4,12 +4,12 @@ namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class homeControllerTest extends webTestCase
+class HomeControllerTest extends webTestCase
 {
     public function testHome()
     {
         $client = static::createClient();
         $client->request('GET', '/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
     }
 }
