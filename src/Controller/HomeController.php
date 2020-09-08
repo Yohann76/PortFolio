@@ -34,7 +34,7 @@ class HomeController extends AbstractController
     {
         $this->connection = HttpClient::create();
         $this->connection = new ScopingHttpClient($this->connection, [
-            'https://api\.github\.com/' => [
+            'https://api.github.com' => [
                 'headers' => [
                     'Accept' => 'application/vnd.github.v3+json',
                     'Authorization' => 'token '.$this->containerBag->get('GITHUB_TOKEN'),
@@ -44,12 +44,12 @@ class HomeController extends AbstractController
         return $this->connection;
     }
 
-
     /**
      * @Route("/", name="home")
      */
-    public function home()
+    public function index()
     {
+
         // get Github Info
         $client = HttpClient::create();
         $response = $client->request('GET', 'https://github.com/Yohann76'); // view profil
