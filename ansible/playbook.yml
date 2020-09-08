@@ -131,11 +131,14 @@
         path: /usr/bin/composer
         mode: "a+x"
 
+    - name: Clear cache
+      command: '{{ symfony_console_path }} cache:clear --env=prod'
+
     - name: Install Composer's dependencies
       become: true
       composer:
         working_dir: "{{ symfony_root_dir }}"
-        no_dev: no
+        no_dev: yes
 
     # Symfony console commands
       #- name: Create DB if not exists
