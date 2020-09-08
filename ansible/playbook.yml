@@ -132,7 +132,7 @@
         mode: "a+x"
 
     - name: Install Composer's dependencies
-      #become: true
+      become: true
       composer:
         working_dir: "{{ symfony_root_dir }}"
         no_dev: no
