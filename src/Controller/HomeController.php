@@ -49,7 +49,6 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-
         // get Github Info
         $client = HttpClient::create();
         $response = $client->request('GET', 'https://github.com/Yohann76'); // view profil
