@@ -85,7 +85,7 @@ jobs:
       # Installation
       #- run:
           #name: Install Ansible
-            #command: |
+          #command: |
             #apt update -y
             #apt install -y language-pack-ja-base language-pack-ja
             #apt install -y software-properties-common
@@ -97,15 +97,21 @@ jobs:
             #pip install --upgrade pip && pip install --upgrade setuptools
             #pip install ansible
 
+      - run:
+          name: Install Dependencies Ansible
+          command: |
+              python3 -m venv env
+              . env/bin/activate
+              pip install ansible
+              pip install -r requirements.txt
+              sudo apt update
+              sudo apt install rsync
+
       # pip install --upgrade pip
 
-      - run:
-          name: Upgrade pip
-          command: pip install --upgrade pip
-
-      - run:
-          name: Install Ansible
-          command: pip3 install ansible
+      #- run:
+          #name: Install Ansible
+          #command: pip3 install ansible
 
 
       - run:
