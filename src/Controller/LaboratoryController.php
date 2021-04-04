@@ -10,15 +10,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 /**
  * @IsGranted("ROLE_ADMIN")
 */
-class DashboardController extends AbstractController
+class LaboratoryController extends AbstractController
 {
     /**
-     * @Route("/dashboard/admin", name="app_dashboard_admin")
+     * @Route("/laboratory", name="laboratory")
      */
     public function index(): Response
     {
-        return $this->render('dashboard/index.html.twig', [
-            'controller_name' => 'DashboardController',
+        return $this->render('laboratory/index.html.twig', [
+            'controller_name' => 'LaboratoryController',
         ]);
     }
 }
