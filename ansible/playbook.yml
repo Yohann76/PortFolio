@@ -61,6 +61,15 @@
         mode: 0777
 
     ###### .env ######
+    - name: Change environment for dev
+      become: true
+      lineinfile:
+        dest: "{{ symfony_root_dir }}/.env"
+        # replace
+        regexp: 'APP_ENV=prod'
+        # for
+        line: APP_ENV=dev
+
     - name: Add SQL connexion information in .env file ( with a new admin SQL User )
       become: true
       lineinfile:
@@ -122,6 +131,7 @@
         dest: "{{ installer }}"
 
     - name: Install composer
+      become: true
       command: "{{ item }}"
       with_items:
         - "php {{ installer }}"
@@ -134,11 +144,18 @@
         path: /usr/bin/composer
         mode: "a+x"
 
+    # for no execute composer install with super root
+    - name: Fix permissions for Install Dependencies
+      become: true
+      file:
+        path: "{{ symfony_root_dir }}"
+        mode: 0777
+
     #- name: Clear cache
       #command: '{{ symfony_console_path }} cache:clear --env=prod'
 
     - name: Install Composer's dependencies
-      become: true
+      #become: true #no root, much time
       composer:
         working_dir: "{{ symfony_root_dir }}"
         no_dev: no
