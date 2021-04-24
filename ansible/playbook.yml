@@ -33,6 +33,7 @@
         recurse: yes
 
     - name: Git clone
+      become: true
       git:
         repo: https://github.com/Yohann76/PortFolio
         dest: "{{ symfony_root_dir }}"
@@ -46,6 +47,7 @@
         state: latest
 
     - name: Fix var directory permissions
+      become: true
       file:
         path: "{{ symfony_var_dir }}"
         state: directory
@@ -53,19 +55,20 @@
         recurse: yes
 
     - name: Fix bin/console permissions
+      become: true
       file:
         path: "{{ symfony_console_path }}"
         mode: 0777
 
     ###### .env ######
-    #- name: Add SQL connexion information in .env file ( with a new admin SQL User )
-      #become: true
-      #lineinfile:
-        #dest: "{{ symfony_root_dir }}/.env"
+    - name: Add SQL connexion information in .env file ( with a new admin SQL User )
+      become: true
+      lineinfile:
+        dest: "{{ symfony_root_dir }}/.env"
         # replace
-        #regexp: 'DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/portfolio?serverVersion=5.7'
+        regexp: 'DATABASE_URL=mysql://root@localhost:3306/portfolio #Wamp'
         # for
-        #line: DATABASE_URL=mysql://{{ sql_user }}:{{ sql_pass }}@localhost:3306/portfolio
+        line: DATABASE_URL=mysql://{{ sql_user }}:{{ sql_pass }}@localhost:3306/portfolio
 
     - name: Add MAILER_URL in .env file
       become: true
@@ -141,8 +144,8 @@
         no_dev: no
 
     # Symfony console commands
-      #- name: Create DB if not exists
-      #command: '{{ symfony_console_path }} doctrine:database:create --if-not-exists --no-interaction'
+    - name: Create DB if not exists
+      command: '{{ symfony_console_path }} doctrine:database:create --if-not-exists --no-interaction'
 
       #- name: make migration
       #command: '{{ symfony_console_path }} make:migration'
@@ -150,8 +153,11 @@
       #- name: Execute migrations
       #command: '{{ symfony_console_path }} doctrine:migrations:migrate --no-interaction'
 
-      #- name: Load data fixtures
-      #command: '{{ symfony_console_path }} doctrine:fixtures:load --no-interaction'
+    - name: doctrine:schema:update
+      command: '{{ symfony_console_path }} doctrine:schema:update --force --no-interaction'
+
+    - name: Load data fixtures
+      command: '{{ symfony_console_path }} doctrine:fixtures:load --no-interaction'
       #when: symfony_env != "prod"
 
 
