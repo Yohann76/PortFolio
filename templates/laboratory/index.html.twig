@@ -1,17 +1,32 @@
-{# extends 'base.html.twig' #}
+{% extends 'base_laboratory.html.twig' %}
 
-<!-- To Do : Create laboratory base Yohann --> 
-<!-- To Do : Nav = laboratory, docs ....  --> 
+{% block title %} Labo {% endblock %}
+
+{% block stylesheets %}
+
+
+    <link href="{{ asset('img/favicon.png') }}" rel="icon"> 
+
+{% endblock %}
 
 {% block body %}
 
-<div class="container-dashboard">
+    <div class="container-laboratory">
 
-    <div class="container">
-    <p> Hello laboratory </p>
+        <div class="container">
+        <p> Hello laboratory </p>
+        </div>
+
     </div>
 
-</div>
+{% endblock %}
 
 
+{% block javascripts %}
+
+   <!--  <script src="js/main.js"></script> -->
+   <script>
+   console.log("hello laboratory");
+   </script>
+    
 {% endblock %}
