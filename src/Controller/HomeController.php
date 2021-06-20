@@ -54,17 +54,17 @@ class HomeController extends AbstractController
         $response = $client->request('GET', 'https://github.com/Yohann76'); // view profil
         $content = $response->getContent(); // view profil content
 
-        $content = preg_match('#[0-9][0-9][0-9][0-9]* contributions\n#', $content,$line); // echec, preg match after ","
-
-        $commitsYears = trim(str_replace(' contributions','', $line[0]));
+        //$content = preg_match('#[0-9][0-9][0-9][0-9][0-9]* contributions\n#', $content,$line); // echec, preg match after ","
+        //dd($line);
+        //$commitsYears = trim(str_replace(' contributions','', $line[0]));
 
         $publicRepoResponse = $this->checkConnection()->request('GET', 'https://api.github.com/users/Yohann76')->toArray(); // info profil
         $publicRepo = $publicRepoResponse['public_repos'];
-        $privateRepo =$publicRepoResponse['total_private_repos'];
+        $privateRepo = $publicRepoResponse['total_private_repos'];
 
         // end Github Info
         return $this->render('home/index.html.twig', [
-            'commitsYears' => $commitsYears,
+            //'commitsYears' => $commitsYears,
             'publicRepo' => $publicRepo,
             'privateRepo' => $privateRepo,
         ]);
