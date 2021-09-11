@@ -68,7 +68,7 @@
         # replace
         regexp: 'APP_ENV=prod'
         # for
-        line: APP_ENV=dev
+        line: APP_ENV=prod
 
     - name: Add SQL connexion information in .env file ( with a new admin SQL User )
       become: true
