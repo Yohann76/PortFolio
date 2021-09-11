@@ -61,7 +61,7 @@
         mode: 0777
 
     ###### .env ######
-    - name: Change environment for dev
+    - name: Change environment for prod
       become: true
       lineinfile:
         dest: "{{ symfony_root_dir }}/.env"
@@ -158,7 +158,7 @@
       #become: true #no root, much time
       composer:
         working_dir: "{{ symfony_root_dir }}"
-        no_dev: no
+        no_dev: yes # if prod : yes, else no in dev 
 
     # Symfony console commands
     - name: Create DB if not exists
