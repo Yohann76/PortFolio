@@ -151,14 +151,18 @@
         path: "{{ symfony_root_dir }}"
         mode: 0777
 
-    #- name: Clear cache
-      #command: '{{ symfony_console_path }} cache:clear --env=prod'
+    - name: Clear cache
+      command: '{{ symfony_console_path }} cache:clear --env=prod'
 
-    - name: Install Composer's dependencies
+    #- name: Clear cache with app_debug
+      #command: 'APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear'
+
+    - name: Install Composer's dependencies 
       #become: true #no root, much time
-      composer:
+      composer: 
         working_dir: "{{ symfony_root_dir }}"
         no_dev: yes # if prod : yes, else no in dev 
+      #command: '{{ symfony_root_dir }} sudo composer install --no-dev --optimize-autoloader' # run this command in serve for run project in prod
 
     # Symfony console commands
     - name: Create DB if not exists
@@ -173,8 +177,8 @@
     - name: doctrine:schema:update
       command: '{{ symfony_console_path }} doctrine:schema:update --force --no-interaction'
 
-    - name: Load data fixtures
-      command: '{{ symfony_console_path }} doctrine:fixtures:load --no-interaction'
+    #- name: Load data fixtures
+      #command: '{{ symfony_console_path }} doctrine:fixtures:load --no-interaction'
       #when: symfony_env != "prod"
 
 
