@@ -69,4 +69,18 @@ class HomeController extends AbstractController
             'privateRepo' => $privateRepo,
         ]);
     }
+
+
+
+    /**
+     * @Route("/site", name="site")
+     */
+    public function index_home()
+    {
+        
+
+        return $this->render('site/index1.html.twig', [
+       
+        ]);
+    }
 }

@@ -1,0 +1,115 @@
+:root {
+    --main-bg-color: rgb(14, 66, 14); 
+    --second-bg-color: palegoldenrod; 
+
+    --three-bg-color: #4ecdc4; 
+    --four-bg-color: #f5f5f5;  
+    --five-bg-color: #2f323a; 
+    }
+    
+body {
+    margin : 0 ; 
+    padding: 0 ;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+a {
+    text-decoration: underline;
+}
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration:none;
+    color : white ; 
+}
+
+a:link {
+ text-decoration:none; 
+ color : white ; 
+} 
+
+a.click {
+    color : black ; 
+    text-decoration: none;
+}
+
+a:visited.click {
+    color : black ; 
+    text-decoration: none;
+}
+
+a:link.click
+{ 
+    color : black ; 
+    text-decoration: none;
+} 
+
+
+/* NAV */
+
+nav{
+    width: 50%;
+    position: fixed;
+    top: 0px;
+    right: 0;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    align-items: flex-end;
+    align-content: flex-end
+}
+
+nav ul li {
+    font-size: 32px;
+    margin: 15px;
+    padding: 5px;
+    text-align: right;
+    color : var(--second-bg-color);
+}
+
+nav ul li a:hover {
+    border-bottom: 3px var(--second-bg-color) solid ;
+}
+
+
+.header-yo {
+    height: 930px;
+    background: linear-gradient(to bottom left, rgb(14, 66, 14) 50%, palegoldenrod 50%);
+}
+
+
+
+
+
+
