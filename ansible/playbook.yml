@@ -61,14 +61,14 @@
         mode: 0777
 
     ###### .env ######
-    - name: Change environment for prod
+    - name: Change environment for dev
       become: true
       lineinfile:
         dest: "{{ symfony_root_dir }}/.env"
         # replace
         regexp: 'APP_ENV=prod'
         # for
-        line: APP_ENV=prod
+        line: APP_ENV=dev
 
     - name: Add SQL connexion information in .env file ( with a new admin SQL User )
       become: true
@@ -151,8 +151,8 @@
         path: "{{ symfony_root_dir }}"
         mode: 0777
 
-    - name: Clear cache
-      command: '{{ symfony_console_path }} cache:clear --env=prod'
+    #- name: Clear cache
+      #command: '{{ symfony_console_path }} cache:clear --env=prod'
 
     #- name: Clear cache with app_debug
       #command: 'APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear'
@@ -161,7 +161,7 @@
       #become: true #no root, much time
       composer: 
         working_dir: "{{ symfony_root_dir }}"
-        no_dev: yes # if prod : yes, else no in dev 
+        no_dev: no # if prod : yes, else no in dev 
       #command: '{{ symfony_root_dir }} sudo composer install --no-dev --optimize-autoloader' # run this command in serve for run project in prod
 
     # Symfony console commands
@@ -180,7 +180,6 @@
     #- name: Load data fixtures
       #command: '{{ symfony_console_path }} doctrine:fixtures:load --no-interaction'
       #when: symfony_env != "prod"
-
 
   roles:
     - php
