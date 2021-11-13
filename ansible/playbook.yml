@@ -183,7 +183,7 @@
 
   roles:
     - php
-    - nginx
+    #- nginx
     - mysql
     #- yarn
 
