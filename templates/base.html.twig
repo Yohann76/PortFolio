@@ -5,8 +5,11 @@
         <title>{% block title %}Yohann Durand{% endblock %}</title>
 
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta name="description" content="PortFolio de Yohann Durand, Programmeur Analyste">
+        <meta name="description" content="Yohann Durand, Développeur web">
         <meta name="author" content="Yohann durand">
+
+        <!-- for Google Search Console --> 
+        <meta name="google-site-verification" content="4dRhVlICpt7ds4hAfxoDPtESTFrgrDQawtxgE2YuY-k" />
 
         {% block stylesheets %}
             <!-- Favicons -->
@@ -192,6 +195,17 @@
 
             <!-- Template Main Javascript File -->
             <script src="js/main.js"></script>
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-QTS4DNRPVE"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-QTS4DNRPVE');
+            </script>
+
         {% endblock %}
     </body>
 </html>
